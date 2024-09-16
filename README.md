@@ -34,7 +34,7 @@ Para proteger el servicio se implementó una protección por API Key, para auten
     environment:
         - MYSQL_AUTHENTICATION_PLUGIN=mysql_native_password
     ```
-    Adicionalmente se identificó que el servicio inicializaba antes que la base de datos termine de inicializar por completo, debido a esto se añadió un bash script `wait-for-it.sh` ubicado en la ruta `ecommerce-service/Docker/app/wait-for-it.sh`. Este comando valida cada 15 segundos que la base de datos se encuentre inicializada, este script se ejecuta en el `docker-copmose.yml` con el siguiente comando:
+    Adicionalmente se identificó que el servicio inicializaba antes que la base de datos termine de inicializar por completo, debido a esto se añadió un shell script `wait-for-it.sh` ubicado en la ruta `ecommerce-service/Docker/app/wait-for-it.sh`. Este comando valida cada 15 segundos que la base de datos se encuentre inicializada, este script se ejecuta en el `docker-copmose.yml` con el siguiente comando:
     ```
     command: ["./wait-for-it.sh", "${ECOMMERCE_MYSQL_NAME}:3301", "--", "npm", "run", "dev"]
     ```
