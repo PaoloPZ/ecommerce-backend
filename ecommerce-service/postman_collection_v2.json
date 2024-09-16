@@ -1,0 +1,683 @@
+{
+	"info": {
+		"_postman_id": "5d5e9809-230c-400c-b892-ce7a2e8568e5",
+		"name": "Envíame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30546910"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/users/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Paolo Perez\",\r\n    \"email\": \"paoloperez.a21@gmail.com\",\r\n    \"phone\": \"980179844\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Paolo Perez Escobar\",\r\n    \"email\": \"paoloperez.a21@gmail.com\",\r\n    \"phone\": \"980179844\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/users/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/users/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Places",
+			"item": [
+				{
+					"name": "Get places",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/places"
+					},
+					"response": []
+				},
+				{
+					"name": "Get place",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/places/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create place",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Place x\",\r\n    \"address\": \"Address x\",\r\n    \"longitude\": 134.12,\r\n    \"latitude\": 134.12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/places"
+					},
+					"response": []
+				},
+				{
+					"name": "Update place",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Place y\",\r\n    \"address\": \"Address y\",\r\n    \"longitude\": 134.12,\r\n    \"latitude\": 134.12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/places/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete place",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/places/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Get category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/categories/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"standard\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Standard\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/categories/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/categories/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Providers",
+			"item": [
+				{
+					"name": "Get providers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/providers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get provider",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/providers/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create provider",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"PROVIDER 2\",\r\n    \"email\": \"p.2@gmail.com\",\r\n    \"phone\": \"2910218i3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/providers"
+					},
+					"response": []
+				},
+				{
+					"name": "Update provider",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"PROVIDER 2\",\r\n    \"email\": \"pr.2@gmail.com\",\r\n    \"phone\": \"2910218i3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/providers/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete provider",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/providers/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicles",
+			"item": [
+				{
+					"name": "Get vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/vehicles"
+					},
+					"response": []
+				},
+				{
+					"name": "Get vehicle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/vehicles/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bus 2 pisos\",\r\n    \"capacity\": 40,\r\n    \"providerId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/vehicles"
+					},
+					"response": []
+				},
+				{
+					"name": "Update vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bus 2 pisos\",\r\n    \"capacity\": 42,\r\n    \"providerId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/vehicles/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete vehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/vehicles/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coverages",
+			"item": [
+				{
+					"name": "Get coverages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/coverages/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get coverage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/coverages/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create coverage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startHour\": \"16:00\",\r\n    \"travelDuration\": 2,\r\n    \"originId\": 1,\r\n    \"destinationId\": 2,\r\n    \"providerId\": 1,\r\n    \"vehicleId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/coverages/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update coverage",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startHour\": \"16:00\",\r\n    \"travelDuration\": 3,\r\n    \"originId\": 1,\r\n    \"destinationId\": 2,\r\n    \"providerId\": 1,\r\n    \"vehicleId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/coverages/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete coverage",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/coverages/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prices",
+			"item": [
+				{
+					"name": "Get prices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/prices/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/prices/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create price",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 121.50,\r\n    \"effectiveStartDate\": \"2025-01-01T10:30:00Z\",\r\n    \"effectiveEndDate\": \"2025-05-31T10:30:00Z\",\r\n    \"coverageId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/prices/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update price",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 121.50,\r\n    \"effectiveStartDate\": \"2024-09-15T10:30:00Z\",\r\n    \"effectiveEndDate\": \"2024-11-15T10:30:00Z\",\r\n    \"coverageId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/prices/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete price",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/prices/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quotations",
+			"item": [
+				{
+					"name": "Get quotations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/quotations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get quotation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/quotations/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create quotation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"travelDate\": \"2024-09-16T10:30:00Z\",\r\n    \"numberOfPassengers\": 2,\r\n    \"originId\": 1,\r\n    \"destinationId\": 2,\r\n    \"categoryId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/quotations"
+					},
+					"response": []
+				},
+				{
+					"name": "Change quotation status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"RESERVA\",\r\n    \"coverageId\": 1,\r\n    \"priceId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/quotations/1/change-status"
+					},
+					"response": []
+				},
+				{
+					"name": "Get quotations by date range",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2024-09-15T10:30:00Z\",\r\n    \"endDate\": \"2024-09-18T10:30:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/quotations/get-by-date-range"
+					},
+					"response": []
+				},
+				{
+					"name": "Get by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/quotations?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"quotations"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "providerId",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by provider",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/quotations?providerId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"quotations"
+							],
+							"query": [
+								{
+									"key": "providerId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle Categories",
+			"item": [
+				{
+					"name": "Assign category to a vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberOfPassengers\": 22,\r\n    \"vehicleId\": 1,\r\n    \"categoryId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/vehicle-categories/"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"value": "1234567890abcdef",
+			"in": "header",
+			"key": "x-api-key"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
