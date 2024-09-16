@@ -8,6 +8,8 @@ docker-compose up --build
 
 Este comando levantará el servicio y la base de datos, asi mismo se poblará la base de datos con los datos necesarios para hacer pruebas.
 
+Se debe esperar que el servicio levante por completo, para identificar esto, en la terminal debe obtenerse el mensaje `Listening on port 8080` tal como se muestra en la siguiente imagen.
+![Service 1](images/service_1.png)
 
 Para realizar las pruebas se comparten 2 Postman collections, `postman_collection_v2.json` exportada como Collection v2 y `postman_collection_v2.json` exportada como Collection v2.1.
 
