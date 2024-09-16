@@ -1,7 +1,5 @@
 # Backend Test Envíame
 
----
-
 Para correr el servicio dockerizado se deben ejecutar el siguiente comando:
 
 ```
@@ -12,6 +10,14 @@ Este comando levantará el servicio y la base de datos, asi mismo se poblará la
 
 
 Para realizar las pruebas se comparten 2 Postman collections, `postman_collection_v2.json` exportada como Collection v2 y `postman_collection_v2.json` exportada como Collection v2.1.
+
+## Autenticación
+Para proteger el servicio se implementó una protección por API Key, para autenticarse correctamente se deben seguir los siguientes pasos:
+
+- Ubicarse en la colección de postman y dirgirse al apartado de Authorization.
+    ![Postman 1](images/postman_1.png)
+- En este apartado, se debe seleccionar como `Auth Type` la opción de API Key, luego se tiene que introducir el valor de `Key` el cual es `x-api-key`, finalmente se agrega el `Value`, que es el API Key, para encontrar esta clave se debe dirigir al archivo `.env` y copiar el valor de la variable`ECOMMERCE_API_KEY.
+    ![Postman 2](images/postman_2.png)
 
 ## Consideraciones
 - Se realizaron algunas correcciones al archivo `docker-copmose.yml` proporcionado en la plantilla de NodeJS, ya que hubo un problema con el siguiente comando:
@@ -32,4 +38,6 @@ Para realizar las pruebas se comparten 2 Postman collections, `postman_collectio
     ```
 
 - Para la capa de persistencia se empleo sequelize con mysql, donde se crearon todas las entidades y relaciones.
+
+
 
