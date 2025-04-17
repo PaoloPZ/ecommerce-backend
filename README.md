@@ -65,8 +65,20 @@ To use the API securely, follow these steps in Postman:
 In your `.env` file:
 
 ```env
-ECOMMERCE_API_KEY=your_api_key
-...
+# Ecommerce service
+ECOMMERCE_SERVICE=
+ECOMMERCE_SERVICE_PATH=
+ECOMMERCE_APP_PORT=
+ECOMMERCE_API_KEY=
+
+ECOMMERCE_MYSQL_NAME=
+ECOMMERCE_MYSQL_DATABASE=
+ECOMMERCE_MYSQL_PORT=
+
+# MySQL settings
+SEQUELIZE_DIALECT=mysql
+SEQUELIZE_USERNAME=root
+SEQUELIZE_PASSWORD=root
 ```
 
 ---

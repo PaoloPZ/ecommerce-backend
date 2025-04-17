@@ -7,3 +7,4 @@ db-storage/
 # Files
 *pyc
 .directory
+.env
