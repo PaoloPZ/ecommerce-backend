@@ -71,34 +71,6 @@ ECOMMERCE_API_KEY=your_api_key
 
 ---
 
-## 🛠️ Docker Considerations
-
-Several adjustments were made to the default template for stability:
-
-- Removed unsupported `command` flag:
-  ```yaml
-  command:
-    - --default-authentication-plugin=mysql_native_password
-  ```
-
-- Replaced it with environment configuration:
-  ```yaml
-  environment:
-    - MYSQL_AUTHENTICATION_PLUGIN=mysql_native_password
-  ```
-
-- Implemented `wait-for-it.sh` to delay app start until MySQL is ready:
-  ```yaml
-  command: ["./wait-for-it.sh", "${ECOMMERCE_MYSQL_NAME}:3301", "--", "npm", "run", "dev"]
-  ```
-
-Script located at:
-```
-ecommerce-service/Docker/app/wait-for-it.sh
-```
-
----
-
 ## 🧬 Database Layer
 
 The app uses **Sequelize ORM** with **MySQL**. All entities and relationships were created and mapped accordingly, including:
@@ -111,13 +83,13 @@ The app uses **Sequelize ORM** with **MySQL**. All entities and relationships we
 
 ## 👨‍💻 Author
 
-**Paolo Pérez Escobar**  
-Backend Developer | AI Enthusiast  
+**Paolo Perez Escobar**  
+Software Engineer | AI Enthusiast  
 [GitHub](https://github.com/PaoloPZ)
 
 ---
 
-> ⚠️ This project was originally developed as a technical challenge and has been improved for public release. It focuses on backend API development, clean code, and Docker integration.
+> ⚠️ This project was originally developed as a challenge and has been improved for public release. It focuses on backend API development, clean code, and Docker integration.
 
 
 
