@@ -1,45 +1,123 @@
-# Backend Test Envíame
+# 🛒 E-commerce Backend
 
-Para correr el servicio dockerizado se deben ejecutar el siguiente comando:
+This is a backend API built as part of a technical challenge. It was developed with **Node.js**, **Express**, **MySQL**, and **Docker**, applying clean architecture and API key authentication. The service includes automatic database population for test cases and is ready to run in a containerized environment.
 
-```
+---
+
+## 🚀 Features
+
+- 🧾 Product management (CRUD)
+- 🔐 API Key authentication
+- 🐳 Docker-based development environment
+- 🧪 Auto-populated database with seed data
+- 🧰 Sequelize ORM + MySQL
+- 🧪 Includes Postman collections for testing
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Run the project with Docker
+
+Make sure Docker is installed and run:
+
+```bash
 docker-compose up --build
 ```
 
-Este comando levantará el servicio y la base de datos, asi mismo se poblará la base de datos con los datos necesarios para hacer pruebas.
+This will:
+- Build the application image
+- Start the MySQL container
+- Populate the database automatically
 
-Se debe esperar que el servicio levante por completo, para identificar esto, en la terminal debe obtenerse el mensaje `Listening on port 8080` tal como se muestra en la siguiente imagen.
-![Service 1](images/service_1.png)
+Wait for the terminal message:
 
-Para realizar las pruebas se comparten 2 Postman collections, `postman_collection_v2.json` exportada como Collection v2 y `postman_collection_v2.json` exportada como Collection v2.1.
+```
+Listening on port 8080
+```
 
-## Autenticación
-Para proteger el servicio se implementó una protección por API Key, para autenticarse correctamente se deben seguir los siguientes pasos:
+![Service Up](images/service_1.png)
 
-- Ubicarse en la colección de postman y dirgirse al apartado de Authorization.
-    ![Postman 1](images/postman_1.png)
-- En este apartado, se debe seleccionar como `Auth Type` la opción de API Key, luego se tiene que introducir el valor de `Key` el cual es `x-api-key`, finalmente se agrega el `Value`, que es el API Key, para encontrar esta clave se debe dirigir al archivo `.env` y copiar el valor de la variable`ECOMMERCE_API_KEY.
-    ![Postman 2](images/postman_2.png)
+---
 
-## Consideraciones
-- Se realizaron algunas correcciones al archivo `docker-copmose.yml` proporcionado en la plantilla de NodeJS, ya que hubo un problema con el siguiente comando:
+## 🧪 Postman Testing
 
-    ```
-    command: 
-        - --default-authentication-plugin=mysql_native_password
-    ```
+Postman collections are provided in two formats:
+- `postman_collection_v2.json`
+- `postman_collection_v2.1.json`
 
-    Debido a este error se elimino este comando y se corrigió añadiendo un enviroment adicional.
-    ```
-    environment:
-        - MYSQL_AUTHENTICATION_PLUGIN=mysql_native_password
-    ```
-    Adicionalmente se identificó que el servicio inicializaba antes que la base de datos termine de inicializar por completo, debido a esto se añadió un shell script `wait-for-it.sh` ubicado en la ruta `ecommerce-service/Docker/app/wait-for-it.sh`. Este comando valida cada 15 segundos que la base de datos se encuentre inicializada, este script se ejecuta en el `docker-copmose.yml` con el siguiente comando:
-    ```
-    command: ["./wait-for-it.sh", "${ECOMMERCE_MYSQL_NAME}:3301", "--", "npm", "run", "dev"]
-    ```
+### API Key Authentication
 
-- Para la capa de persistencia se empleo sequelize con mysql, donde se crearon todas las entidades y relaciones.
+To use the API securely, follow these steps in Postman:
+
+1. Go to the **Authorization** tab  
+2. Select **API Key** as Auth Type  
+3. Set `Key` to `x-api-key`  
+4. Set `Value` using the `ECOMMERCE_API_KEY` from your `.env` file
+
+![Postman Auth](images/postman_1.png)
+![API Key Setup](images/postman_2.png)
+
+---
+
+## 🔧 Environment Variables
+
+In your `.env` file:
+
+```env
+ECOMMERCE_API_KEY=your_api_key
+...
+```
+
+---
+
+## 🛠️ Docker Considerations
+
+Several adjustments were made to the default template for stability:
+
+- Removed unsupported `command` flag:
+  ```yaml
+  command:
+    - --default-authentication-plugin=mysql_native_password
+  ```
+
+- Replaced it with environment configuration:
+  ```yaml
+  environment:
+    - MYSQL_AUTHENTICATION_PLUGIN=mysql_native_password
+  ```
+
+- Implemented `wait-for-it.sh` to delay app start until MySQL is ready:
+  ```yaml
+  command: ["./wait-for-it.sh", "${ECOMMERCE_MYSQL_NAME}:3301", "--", "npm", "run", "dev"]
+  ```
+
+Script located at:
+```
+ecommerce-service/Docker/app/wait-for-it.sh
+```
+
+---
+
+## 🧬 Database Layer
+
+The app uses **Sequelize ORM** with **MySQL**. All entities and relationships were created and mapped accordingly, including:
+- Product entity
+- Category entity
+- User management (if implemented)
+- Sales or orders logic (if applicable)
+
+---
+
+## 👨‍💻 Author
+
+**Paolo Pérez Escobar**  
+Backend Developer | AI Enthusiast  
+[GitHub](https://github.com/PaoloPZ)
+
+---
+
+> ⚠️ This project was originally developed as a technical challenge and has been improved for public release. It focuses on backend API development, clean code, and Docker integration.
 
 
 
